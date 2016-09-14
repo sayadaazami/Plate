@@ -13,13 +13,11 @@ class Plate{
 	private $_suportedChars = null;
 
 
-	public function __construct($plate){
+	public function __construct(){
 		$config = config('plate');
 		$this->_data = $config['state_data'];
 		$this->_suportedChars = $config['supported_chars'];
-		$this->setPlate($plate);
 	}
-
 
 	private function parse(){
 		preg_match($this->getRegEx(), $this->_plate, $matchs);
@@ -67,6 +65,7 @@ class Plate{
 		$this->_plate = $plate;
 		$this->validate();
 		$this->parse();
+		return $this;
 	}
 
 	public function getRegEx(){
@@ -90,7 +89,7 @@ class Plate{
 		}
 	}
 
-	public function parsedData(){
+	public function getparsedData(){
 		return $this->_parsed;
 	}
 
