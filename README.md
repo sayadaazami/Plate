@@ -26,24 +26,27 @@ Next, add your new provider to the providers array of config/app.php:
   ]
 ```
 
-Finally, add class alias to the aliases array of config/app.php:
+Next, add class alias to the aliases array of config/app.php:
 
 ```php
 'aliases' => [
-	 // ...
+   // ...
       'Plate' => Plate\PlateFacade::class
     // ...
 ]
 ```
 
+Finally, run:
+> php artisan vendor:publish
+
 Ho to use:
 ====
 ```php
 $plate_number = '12' .
-	'س' .
-	321 .
-	'ایران' .
-	. 22;
+  'س' .
+  321 .
+  'ایران' .
+  . 22;
 $plate = Plate::setPlate($plate_number);
 $plate->getType(); // تاکسی
 $plate->getState(); // تهران

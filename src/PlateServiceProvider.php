@@ -16,6 +16,11 @@
 			$this->publishes([
             	__DIR__ . '/config.php' => config_path('plate.php')
          	], 'config');
+
+         	\App::bind('plate', function()
+			{
+			    return new Plate;
+			});
 		}
 
 		/**

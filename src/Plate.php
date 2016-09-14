@@ -58,7 +58,7 @@ class Plate{
 			throw new CityNotFound("There Is Not Any City With This Information");
 		}
 
-		return $this->_data[$state][$number][$char][0];
+		return implode(', ', $this->_data[$state][$number][$char]);
 	}
 
 	public function setPlate($plate){

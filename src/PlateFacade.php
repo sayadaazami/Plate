@@ -1,6 +1,8 @@
 <?php
 	namespace Plate;
 	
+	use Illuminate\Support\Facades\Facade;
+
 	class PlateFacade extends Facade
 	{
 	    /**
