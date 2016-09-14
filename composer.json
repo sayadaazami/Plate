@@ -1,0 +1,28 @@
+{
+    "name": "plate/plate",
+    "description": "this package can help you to work on iranian vehicle plate numbers",
+    "type": "dev",
+    "keywords": [
+        "iran",
+        "plak",
+        "plate",
+        "plate number"
+    ],
+    "authors": [
+        {
+            "name": "sayadaazami",
+            "email": "sayadaazami@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Plate\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
