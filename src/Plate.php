@@ -123,4 +123,8 @@ class Plate{
 	public function get3DigitNumber(){
 		return $this->_parsed['3DigitNumber'];
 	}
+
+	public function isCab(){
+		return $this->_parsed['type'] === 'تاکسی' ? true : false;
+	}
 }
