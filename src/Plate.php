@@ -22,16 +22,17 @@ class Plate{
 	private function parse(){
 		preg_match($this->getRegEx(), $this->_plate, $matchs);
 
-		$stateNumber = $matchs[2];
+		$stateNumber = $matchs[4];
 		$stateName = $this->_getStateNameByNumber($stateNumber);
-		$character = $matchs[4];
+		$character = $matchs[2];
+
 		$this->_parsed = [
 			'cityName'			=>	$this->_getCityNameByCharAndNumber($stateName, $character, $stateNumber),
 			'type'				=>	$this->_getTypeByChar($character),
 			'char'				=>	$character,
-			'2DigitNumber'		=>	$matchs[3],
-			'3DigitNumber'		=>	$matchs[5],
-			'countryName'		=>	$matchs[1],
+			'2DigitNumber'		=>	$matchs[1],
+			'3DigitNumber'		=>	$matchs[3],
+			'countryName'		=>	$matchs[5],
 			'stateNumber'		=>	$stateNumber,
 			'stateName'			=>	$stateName,
 		];
@@ -72,8 +73,7 @@ class Plate{
 
 	public function getRegEx(){
 		$farsiChars = implode('|', array_keys($this->_suportedChars));
-		return "/(ایران) ([1-9]\d) \- ([1-9]\d) ({$farsiChars}) ([1-9]\d{2})/";
-		return "/([1-9]\d)({$farsiChars})([1-9]\d{2})(ایران)([1-9]\d)/";
+		return "/([1-9]\d{1})\s+({$farsiChars})\s+([1-9]\d{2})\s+\-\s+([1-9]\d{1})\s+(ایران)/";
 	}
 
 	public function validate($plate = null, $softCheck = false){

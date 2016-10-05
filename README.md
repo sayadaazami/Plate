@@ -42,12 +42,15 @@ Finally, run:
 Ho to use:
 ====
 ```php
-$plate_number = '12' .
-  'س' .
-  321 .
-  'ایران' .
-  . 22;
-$plate = Plate::setPlate($plate_number);
-$plate->getType(); // تاکسی
-$plate->getState(); // تهران
+  $plate = new Plate\Plate();
+  $plak = 21 .
+      ' ب ' .
+      488 .
+      ' - ' .
+      88 .
+      ' ایران';
+
+  $r = $plate->setPlate($plak);
+  print_r($r->getparsedData()); exit;
+  print_r($plate->isCab());
 ```
