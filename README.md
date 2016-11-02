@@ -54,3 +54,8 @@ Ho to use:
   print_r($r->getparsedData()); exit;
   print_r($plate->isCab());
 ```
+
+### Get plate as image
+```php
+  $plate->getImage('path/to/export/image.png');
+```
